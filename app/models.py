@@ -2,6 +2,7 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
+#Models have been modified to compensate for differences with databases.
 
 class UserProfile(models.Model):
     """
