@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>(Feinberg) Stuff That's Due</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/homepage.css">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner" style="background-image: -webkit-linear-gradient(top, #2E0854, #29074B); background-image: -moz-linear-gradient(top, #2E0854, #29074B); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2E0854), to(#29074B)); background-image: -o-linear-gradient(top, #2E0854, #29074B); background-image: linear-gradient(to bottom, #2E0854, #29074B);">
+        <div class="container">
+          <a class="brand" style="color:white;" href="/">Stuff That's Due</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/about">About</a></li>
+              <li><a href="/register">Register</a></li>
+            </ul>
+            {% if user.is_authenticated %}
+            <div class="navbar-form pull-right">
+            	<ul class="nav">
+            		<li><a href="/">{{ user.first_name }} {{ user.last_name }}</a></li>
+    				<li><a href="/logout">Logout</a></li>
+    			</ul>
+            </div>
+            {% else %}
+            <form class="navbar-form pull-right" action="/login" method="post">
+              {% csrf_token %}
+              <input class="span2" id="login_email" type="text" name="email" placeholder="Email">
+              <input class="span2" id="login_password" type="password" name="password" placeholder="Password">
+              <button type="submit" value="Login" class="btn">Sign in</button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" style="padding-top:0px; padding-bottom:0px; margin-top: 0px;">
+
+    {% block content %}
+    {% endblock %}
+
+      </div>
+
+    {% block whitecontent %}
+    {% endblock %}
+
+      <hr>
+
+      <footer>
+        <p>&copy; Stuff That's Due 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+
+  </body>
+</html>

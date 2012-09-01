@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="login-form">
+    <div class="main-title">
+        <h3>Login with Email</h3>
+    </div>
+    {% if login_error %}
+    Incorrect username or password.
+    {% endif %}
+
+    <form action="/login" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="login_email">Email:</label>
+            <input id="login_email" type="text" name="email" />
+        </p>
+
+        <p>
+            <label for="login_password">Password:</label>
+            <input id="login_password" type="password" name="password" />
+        </p>
+
+        <p>
+            <label for="login"></label>
+            <input type="submit" value="Login" />
+        </p>
+    </form>
+</div>
+
+<div class="registration-form">
+    <div class="main-title">
+        <h3>Register</h3>
+    </div>
+    <div id="create-form">
+    <form action="/register" method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <p>
+            <label for="create"></label>
+            <input type="submit" value="Create Account" />
+        </p>
+    </form>
+    </div>
+</div>
+
+<div> &nbsp; </div>
+
+{% endblock %}

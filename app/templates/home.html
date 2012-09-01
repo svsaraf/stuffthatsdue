@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="weektitle" style="width:100%; text-align:center;">
+        <h2 style="display:inline;">Week {{ weeknumber }} ({{ displaycollege }})</h2>
+        <a style="display:inline; color: black; float:left; padding-top:9px; margin-left:-15px;" href="/week/{{ weeknumber|add:"-1" }}">Previous Week</a>
+        <a style="display:inline; color: black; float:right; padding-top:9px;" href="/week/{{ weeknumber|add:"+1" }}">Next Week</a>
+    </div>
+{% endblock %}
+
+{% block whitecontent %}
+      <div class="row">
+        <div class="span4">
+          <h3>Reading:</h3>
+          <ul class="list_items">
+              {% for book in readingactivities %}
+              <li style="display:block; color:#483D8B;">{{ book.title }} due {{ book.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ book.text }}</li>
+    			    {% endfor %}
+    	    </ul>
+        </div>
+        <div class="span4">
+          <h3>Assignments:</h3>
+          <ul class="list_items">
+            	{% for hw in assignactivities %}
+    			    <li style="display:block;color:#483D8B;">{{ hw.title }} due {{ hw.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ hw.text }}</li>
+              {% endfor %}
+    	  </ul>
+       </div>
+        <div class="span4">
+          <h3>Add something!</h3>
+          <form action="/week/{{ weeknumber }}/" method="post">
+              {% csrf_token %}
+              {{ form.non_field_errors }}
+              <label for="title">Title (keep in brief, don't write due date or college):</label>
+              <div class="fieldWrapper">
+                {{ form.title.errors }}
+                {{ form.title }}
+              </div>
+              <label for="text">Details (eMerg, Blackboard, email, hypothetical):</label>
+               <div class="fieldWrapper">
+                {{ form.text.errors }}
+                {{ form.text }}
+              </div>
+              <label for="typeofact">Type:</label>
+               <div class="fieldWrapper">
+                {{ form.typeofact }}
+              </div>
+              <label for="patel">When is it due for Patel college?</label>
+              <div class="fieldWrapper">
+                {{ form.patelduedate }}
+              </div>
+              <label for="strople">When is it due for Strople college?</label>
+              <div class="fieldWrapper">
+                {{ form.stropleduedate }}
+              </div>
+              <label for="leung">When is it due for Leung college?</label>
+              <div class="fieldWrapper">
+                {{ form.leungduedate }}
+              </div>
+              <label for="schaefer">When is it due for Schaefer college?</label>
+              <div class="fieldWrapper">
+                {{ form.schaeferduedate }}
+              </div>
+              <p><button type="submit" class="btn" value="week">
+                  Add!
+                </button></p>
+              <!--<input style="width:100%;" class="inputtitle" type="text" name="email" placeholder="Title">
+              <textarea rows="10" cols="10" style="width:100%; height:125px; text-align:text-top; overflow:false;" class="inputdetails" name="password" placeholder="Details"></textarea>
+              <div>
+              	<button type="submit" value="Add" class="btn">Add</button>
+          	  </div>-->
+          </form>
+        </div>
+      </div>
+{% endblock %}
+

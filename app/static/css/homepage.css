@@ -1,0 +1,23 @@
+.hero-unit {
+	margin-bottom: 5px;
+}
+
+ul.list_items {
+	width:100%; 
+	padding-top:3px; 
+	text-align:left; 
+	list-style:none; 
+	margin-left:0px;
+}
+
+.list_items li {
+	border-bottom:1px dotted #DDD; 
+	position:relative; 
+	padding-top:2px; 
+	cursor: pointer;
+	padding-top: 2px;
+}
+
+.largeformfield {
+	height: 200px;
+}
