@@ -48,7 +48,7 @@ def register(request):
 
             #request.session['next'] = '/'
 
-            return authenticate(request, email, password)
+            return authenticate(request, username, password)
     else:
         form = RegistrationForm()
     
