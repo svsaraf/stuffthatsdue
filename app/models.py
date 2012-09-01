@@ -2,18 +2,6 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
-NEW_USERNAME_LENGTH = 1000
-
-def monkey_patch_username():
-    username = User._meta.get_field("username")
-    username.max_length = NEW_USERNAME_LENGTH
-    for v in username.validators:
-        if isinstance(v, MaxLengthValidator):
-            v.limit_value = NEW_USERNAME_LENGTH
-
-
-monkey_patch_username()
-
 
 class UserProfile(models.Model):
     """
