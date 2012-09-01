@@ -33,7 +33,10 @@ def register(request):
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
 
-            user = User.objects.create_user(email, #email is username
+            location = email.find("@")
+            username = email[:location]
+
+            user = User.objects.create_user(username, #email is username
                                             email, #email
                                             password)
             user.first_name = first_name
