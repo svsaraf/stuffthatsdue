@@ -90,7 +90,10 @@ def logout(request):
 @csrf_protect
 def login(request):
     if request.method == "POST":
-        return authenticate(request, request.POST['email'], request.POST['password'])
+        activeemail = request.POST['email']
+        location = activeemail.find("@")
+        username = activeemail[:location]
+        return authenticate(request, username, request.POST['password'])
     return redirect('/')
 
 def week(request, weeknumber):
