@@ -42,7 +42,7 @@ class PatelActivity(models.Model):
     text = models.CharField(max_length=700, null=False, default="Details")
     typeofact = models.CharField(max_length=3, choices=TYPE_OF_ACTIVITY, default='A')
     week = models.IntegerField(default=2)
-    duedate = models.CharField(max_length=2, choices=DAY_IT_IS_DUE, default=1)
+    duedate = models.CharField(max_length=20, choices=DAY_IT_IS_DUE, default=1)
     slug = models.SlugField(max_length=10000)
 
     def __unicode__(self):
@@ -68,7 +68,7 @@ class StropleActivity(models.Model):
     text = models.CharField(max_length=700, null=False, default="Details")
     typeofact = models.CharField(max_length=3, choices=TYPE_OF_ACTIVITY, default='A')
     week = models.IntegerField(default=2)
-    duedate = models.CharField(max_length=2, choices=DAY_IT_IS_DUE, default=1)
+    duedate = models.CharField(max_length=20, choices=DAY_IT_IS_DUE, default=1)
     slug = models.SlugField(max_length=10000)
 
     def __unicode__(self):
@@ -95,7 +95,7 @@ class LeungActivity(models.Model):
     text = models.CharField(max_length=700, null=False, default="Details")
     typeofact = models.CharField(max_length=3, choices=TYPE_OF_ACTIVITY, default='A')
     week = models.IntegerField(default=2)
-    duedate = models.CharField(max_length=2, choices=DAY_IT_IS_DUE, default=1)
+    duedate = models.CharField(max_length=20, choices=DAY_IT_IS_DUE, default=1)
     slug = models.SlugField(max_length=10000)
 
     def __unicode__(self):
@@ -123,7 +123,7 @@ class SchaeferActivity(models.Model):
     text = models.CharField(max_length=700, null=False, default="Details")
     typeofact = models.CharField(max_length=3, choices=TYPE_OF_ACTIVITY, default='A')
     week = models.IntegerField(default=2)
-    duedate = models.CharField(max_length=2, choices=DAY_IT_IS_DUE, default=1)
+    duedate = models.CharField(max_length=20, choices=DAY_IT_IS_DUE, default=1)
     slug = models.SlugField(max_length=10000)
 
     def __unicode__(self):
