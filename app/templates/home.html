@@ -38,8 +38,24 @@
         <div class="span4">
           <h3>Assignments:</h3>
           <ul class="list_items">
-            	{% for hw in assignactivities %}
-    			    <li style="display:block;color:#483D8B;">{{ hw.title }} due {{ hw.duedate }}</li>
+              {% for hw in assignM %}
+              <li style="display:block; color:#483D8B;">{{ hw.title }} due {{ hw.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ hw.text }}</li>
+              {% endfor %}
+              {% for hw in assignT %}
+              <li style="display:block; color:#483D8B;">{{ hw.title }} due {{ hw.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ hw.text }}</li>
+              {% endfor %}
+              {% for hw in assignW %}
+              <li style="display:block; color:#483D8B;">{{ hw.title }} due {{ hw.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ hw.text }}</li>
+              {% endfor %}
+              {% for hw in assignU %}
+              <li style="display:block; color:#483D8B;">{{ hw.title }} due {{ hw.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ hw.text }}</li>
+              {% endfor %}
+              {% for hw in assignF %}
+              <li style="display:block; color:#483D8B;">{{ hw.title }} due {{ hw.duedate }}</li>
               <li style="padding-left:200px; display:block; font-size:75%;">{{ hw.text }}</li>
               {% endfor %}
     	  </ul>
