@@ -19,7 +19,7 @@ class UserProfile(models.Model):
     bio = models.CharField(max_length=255, blank=True, null=True, default="")
     college = models.CharField(max_length=3, choices=COLLEGES, default='Pa')
     slug = models.SlugField(max_length=10000)
-
+   
     def __unicode__(self):
         return "%s" % self.user
 
@@ -45,6 +45,7 @@ class PatelActivity(models.Model):
     week = models.IntegerField(default=2)
     duedate = models.CharField(max_length=20, choices=DAY_IT_IS_DUE, default=1)
     slug = models.SlugField(max_length=10000)
+    #numduedate = models.IntegerField(default=1)
 
     def __unicode__(self):
         return "%s was created by %s for %s on week %s" % (self.title, self.author.first_name, self.duedate, self.week)
@@ -71,6 +72,7 @@ class StropleActivity(models.Model):
     week = models.IntegerField(default=2)
     duedate = models.CharField(max_length=20, choices=DAY_IT_IS_DUE, default=1)
     slug = models.SlugField(max_length=10000)
+    #numduedate = models.IntegerField(default=1)
 
     def __unicode__(self):
         return "%s was created by %s for %s on week %s" % (self.title, self.author.first_name, self.duedate, self.week)
@@ -98,6 +100,7 @@ class LeungActivity(models.Model):
     week = models.IntegerField(default=2)
     duedate = models.CharField(max_length=20, choices=DAY_IT_IS_DUE, default=1)
     slug = models.SlugField(max_length=10000)
+    #numduedate = models.IntegerField(default=1)
 
     def __unicode__(self):
         return "%s was created by %s for %s on week %s" % (self.title, self.author.first_name, self.duedate, self.week)
@@ -126,6 +129,7 @@ class SchaeferActivity(models.Model):
     week = models.IntegerField(default=2)
     duedate = models.CharField(max_length=20, choices=DAY_IT_IS_DUE, default=1)
     slug = models.SlugField(max_length=10000)
+    #numduedate = models.IntegerField(default=1)
 
     def __unicode__(self):
         return "%s was created by %s for %s on week %s" % (self.title, self.author.first_name, self.duedate, self.week)

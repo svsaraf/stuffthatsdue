@@ -13,10 +13,26 @@
         <div class="span4">
           <h3>Reading:</h3>
           <ul class="list_items">
-              {% for book in readingactivities %}
+              {% for book in readingM %}
               <li style="display:block; color:#483D8B;">{{ book.title }} due {{ book.duedate }}</li>
               <li style="padding-left:200px; display:block; font-size:75%;">{{ book.text }}</li>
     			    {% endfor %}
+              {% for book in readingT %}
+              <li style="display:block; color:#483D8B;">{{ book.title }} due {{ book.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ book.text }}</li>
+              {% endfor %}
+              {% for book in readingW %}
+              <li style="display:block; color:#483D8B;">{{ book.title }} due {{ book.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ book.text }}</li>
+              {% endfor %}
+              {% for book in readingU %}
+              <li style="display:block; color:#483D8B;">{{ book.title }} due {{ book.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ book.text }}</li>
+              {% endfor %}
+              {% for book in readingF %}
+              <li style="display:block; color:#483D8B;">{{ book.title }} due {{ book.duedate }}</li>
+              <li style="padding-left:200px; display:block; font-size:75%;">{{ book.text }}</li>
+              {% endfor %}
     	    </ul>
         </div>
         <div class="span4">
