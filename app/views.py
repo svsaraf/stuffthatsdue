@@ -15,7 +15,7 @@ from app.models import UserProfile, PatelActivity, LeungActivity, StropleActivit
 
 def index(request):
     # If not logged in, then go to register page
-	return redirect('/week/3')
+	return redirect('/week/4')
 
 def about(request):
     return render_to_response("about.html", {
